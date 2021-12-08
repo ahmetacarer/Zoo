@@ -1,5 +1,9 @@
 package com.ing.zoo;
 import com.ing.zoo.animals.*;
+import com.ing.zoo.types.Animal;
+import com.ing.zoo.types.Carnivore;
+import com.ing.zoo.types.Herbivore;
+import com.ing.zoo.types.Peformance;
 
 import java.util.Arrays;
 import java.util.List;
@@ -58,7 +62,7 @@ public class Zoo {
         animals = Arrays.asList(new Lion("henk"),
                 new Hippo("elsa"), new Pig("dora"),
                 new Tiger("wally"), new Zebra("marty"),
-                new Butterfly("sting"), new Wolf("Akela"));
+                new Butterfly("sting"), new Wolf("akela"));
     }
 
     private static void animalsPerformTricks() {

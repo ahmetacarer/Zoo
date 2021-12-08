@@ -1,8 +1,8 @@
 package com.ing.zoo.animals;
 
-import com.ing.zoo.Animal;
-import com.ing.zoo.Carnivore;
-import com.ing.zoo.Peformance;
+import com.ing.zoo.types.Animal;
+import com.ing.zoo.types.Carnivore;
+import com.ing.zoo.types.Peformance;
 
 import java.util.Random;
 

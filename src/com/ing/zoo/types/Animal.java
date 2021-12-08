@@ -1,4 +1,4 @@
-package com.ing.zoo;
+package com.ing.zoo.types;
 
 public abstract class Animal {
     private final String name;

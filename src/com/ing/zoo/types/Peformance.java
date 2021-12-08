@@ -1,4 +1,4 @@
-package com.ing.zoo;
+package com.ing.zoo.types;
 
 public interface Peformance {
     void performTrick();

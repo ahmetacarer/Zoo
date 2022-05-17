@@ -1,9 +1,9 @@
-package com.ing.zoo.animals;
+package com.ing.zoo.animals.omnivores;
 
-import com.ing.zoo.types.Animal;
-import com.ing.zoo.types.Carnivore;
-import com.ing.zoo.types.Herbivore;
-import com.ing.zoo.types.Peformance;
+import com.ing.zoo.animals.Animal;
+import com.ing.zoo.animals.contracts.Carnivore;
+import com.ing.zoo.animals.contracts.Herbivore;
+import com.ing.zoo.animals.contracts.Peformance;
 
 import java.util.Random;
 

@@ -1,9 +1,15 @@
 package com.ing.zoo;
-import com.ing.zoo.animals.*;
-import com.ing.zoo.types.Animal;
-import com.ing.zoo.types.Carnivore;
-import com.ing.zoo.types.Herbivore;
-import com.ing.zoo.types.Peformance;
+import com.ing.zoo.animals.carnivores.Lion;
+import com.ing.zoo.animals.carnivores.Tiger;
+import com.ing.zoo.animals.carnivores.Wolf;
+import com.ing.zoo.animals.herbivores.Butterfly;
+import com.ing.zoo.animals.herbivores.Hippo;
+import com.ing.zoo.animals.herbivores.Zebra;
+import com.ing.zoo.animals.omnivores.Pig;
+import com.ing.zoo.animals.Animal;
+import com.ing.zoo.animals.contracts.Carnivore;
+import com.ing.zoo.animals.contracts.Herbivore;
+import com.ing.zoo.animals.contracts.Peformance;
 
 import java.util.*;
 

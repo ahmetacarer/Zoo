@@ -5,17 +5,15 @@ import com.ing.zoo.types.Carnivore;
 import com.ing.zoo.types.Herbivore;
 import com.ing.zoo.types.Peformance;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Zoo {
 
     private static List<Animal> animals;
-    private static final String[] commands = {"hello", "give leaves", "give meat", "perform trick"};
-
+    private static Map<String, Runnable> commands = new HashMap<>();
     public static void main(String[] args)
     {
+        addStandardCommands();
         initializeAnimals();
         Scanner scanner = new Scanner(System.in);
         String input = "";
@@ -30,31 +28,19 @@ public class Zoo {
         System.exit(1);
     }
 
+    private static void addStandardCommands() {
+        commands.put("hello", Zoo::animalsGreet);
+        commands.put("give leaves", Zoo::feedHerbivores);
+        commands.put("give meat", Zoo::feedCarnivores);
+        commands.put("perform trick", Zoo::animalsPerformTricks);
+    }
+
     private static void options(String input) {
-        if(input.equals(commands[0]))
-        {
-            animalsGreet();
+        if (commands.containsKey(input)) {
+            commands.get(input).run();
         }
-        else if(input.contains("hello "))
-        {
-            String nameOfAnimal = input.split("hello ")[1]; //splits between hello and the name of the animal and takes the name
-            specificAnimalSaysHello(nameOfAnimal);
-        }
-        else if(input.equals(commands[1]))
-        {
-            feedHerbivores();
-        }
-        else if(input.equals(commands[2]))
-        {
-            feedCarnivores();
-        }
-        else if(input.equals(commands[3]))
-        {
-            animalsPerformTricks();
-        }
-        else
-        {
-            System.out.println("Unknown command: " + input);
+        else if (input.contains("hello ") && input.length() > "hello ".length()) {
+            specificAnimalGreets(input.split("hello ")[1]);
         }
     }
 
@@ -93,13 +79,11 @@ public class Zoo {
         animals.forEach(Animal::sayHello);
     }
 
-    private static void specificAnimalSaysHello(String name) {
+    private static void specificAnimalGreets(String name) {
         for (Animal animal:
              animals) {
-            if (name.equals(animal.getName()))
-            {
+            if (name.equals(animal.getName())) {
                 animal.sayHello();
-                break; // ensures list stops after the specific animal greets
             }
         }
     }
